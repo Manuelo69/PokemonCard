@@ -41,7 +41,6 @@ function App() {
       <button
         onClick={handleRandomPokemon}
         className="mt-5 shadow-xl border border-black overflow-hidden"
-        disabled={pokemonRequested} // Deshabilitar el botón si se ha solicitado un nuevo Pokémon
       >
         Nuevo Pokémon
       </button>
