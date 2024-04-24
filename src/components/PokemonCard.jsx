@@ -9,15 +9,24 @@ const PokemonCard = ({
   defense,
 }) => {
   return (
-    <div className="pokemon-card flex items-center flex-col bg-white shadow-xl rounded-2xl h-80 w-72 justify-around">
-      <div>
-        <img src={sprite} alt={name} />
+    <div className="pokemon-card flex items-center flex-col bg-white shadow-xl rounded-2xl h-80 w-72 justify-around relative overflow-hidden">
+      <img
+        className="block w-full h-full"
+        src={"src/assets/bg-pattern-card.svg"}
+        alt=""
+      />
+      <div className="card-body flex flex-col">
+        <img
+          className="w-52 h-52 mb-11 rounded-full  bg-slate-50"
+          src={sprite}
+          alt={name}
+        />
+        <p className="relative z-10">
+          {name} {hp}hp
+        </p>
+        <p className="relative z-10">Exp: {exp}</p>
       </div>
-      <p>
-        {name} {hp}hp
-      </p>
-      <p>Exp: {exp}</p>
-      <div className="w-40 text-sm flex flex-row">
+      <div className="w-40 text-sm flex flex-row relative z-10">
         <p>{attack} Ataque</p>
         <p>{specialAttack} Ataque especial</p>
         <p>{defense} Defensa</p>
