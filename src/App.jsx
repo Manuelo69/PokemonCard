@@ -4,21 +4,23 @@ import "./App.css";
 
 function App() {
   const [pokemon, setPokemon] = useState(null);
-  const [pokemonRequested, setPokemonRequested] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const getRandomPokemon = async () => {
+    setLoading(true);
     const numRandom = Math.floor(Math.random() * 150) + 1;
     const response = await fetch(
       `https://pokeapi.co/api/v2/pokemon/${numRandom}`
     );
     const data = await response.json();
     setPokemon(data);
+    setLoading(false);
   };
 
   const handleRandomPokemon = () => {
-    setPokemonRequested(true);
-    getRandomPokemon();
-    setPokemonRequested(false);
+    if (!loading) {
+      getRandomPokemon();
+    }
   };
 
   useEffect(() => {
@@ -41,8 +43,9 @@ function App() {
       <button
         onClick={handleRandomPokemon}
         className="mt-5 shadow-xl border border-black overflow-hidden"
+        disabled={loading}
       >
-        Nuevo Pokémon
+        {loading ? "Cargando..." : "Nuevo Pokémon"}
       </button>
     </div>
   );
