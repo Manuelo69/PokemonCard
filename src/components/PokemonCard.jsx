@@ -28,7 +28,7 @@ const PokemonCard = ({
         </p>
         <p className="text-sm mt-1  text-gray-500"> {exp} exp</p>
       </div>
-      <div className=" text-sm flex flex-row justify-around w-full content-center">
+      <div className="text-black text-sm flex flex-row justify-around w-full content-center">
         <div className="flex flex-col">
           <h3 className="font-bold text-xs mb-1">{attack}K</h3>
           <p className="text-xs"> Ataque</p>
