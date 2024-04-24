@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
-import PokemonCard from "./components/PokemonCard";
+import PokemonCard from "./components/PokemonCard/PokemonCard";
 import "./App.css";
 
 function App() {
   const [pokemon, setPokemon] = useState(null);
-
-  useEffect(() => {
-    getRandomPokemon();
-  }, []);
+  const [pokemonRequested, setPokemonRequested] = useState(false);
 
   const getRandomPokemon = async () => {
     const numRandom = Math.floor(Math.random() * 150) + 1;
@@ -19,8 +16,14 @@ function App() {
   };
 
   const handleRandomPokemon = () => {
+    setPokemonRequested(true);
     getRandomPokemon();
+    setPokemonRequested(false);
   };
+
+  useEffect(() => {
+    getRandomPokemon();
+  }, []);
 
   return (
     <div className="App">
@@ -38,8 +41,9 @@ function App() {
       <button
         onClick={handleRandomPokemon}
         className="mt-5 shadow-xl border border-black overflow-hidden"
+        disabled={pokemonRequested} // Deshabilitar el botón si se ha solicitado un nuevo Pokémon
       >
-        Recargar
+        Nuevo Pokémon
       </button>
     </div>
   );
