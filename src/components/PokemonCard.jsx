@@ -16,26 +16,29 @@ const PokemonCard = ({
       />
       <div className="card-body flex flex-col">
         <img
-          className="w-40 h-40 rounded-full -mt-24  bg-white border-black border"
+          className="w-40 h-40 rounded-full -mt-24  bg-white"
           src={sprite}
           alt={name}
         />
-        <p className="text-sm ">
-          <span className="font-bold capitalize text-sm">{name}</span> {hp}hp
+        <p className="text-sm  text-gray-500">
+          <span className="font-bold capitalize text-sm text-black">
+            {name}
+          </span>{" "}
+          {hp}hp
         </p>
-        <p className="">Exp: {exp}</p>
+        <p className="text-sm mt-1  text-gray-500"> {exp} exp</p>
       </div>
       <div className=" text-sm flex flex-row justify-around w-full content-center">
         <div className="flex flex-col">
-          <h3 className="font-bold text-xs">{attack}K</h3>
+          <h3 className="font-bold text-xs mb-1">{attack}K</h3>
           <p className="text-xs"> Ataque</p>
         </div>
         <div className="flex flex-col">
-          <h3 className="font-bold text-xs">{specialAttack}K</h3>
+          <h3 className="font-bold text-xs mb-1">{specialAttack}K</h3>
           <p className="text-xs"> Ataque especial</p>
         </div>
         <div className="flex flex-col">
-          <h3 className="font-bold text-xs">{defense}K</h3>
+          <h3 className="font-bold text-xs mb-1">{defense}K</h3>
           <p className="text-xs"> Defensa</p>
         </div>
       </div>
