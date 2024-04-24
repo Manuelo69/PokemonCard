@@ -20,23 +20,23 @@ const PokemonCard = ({
           src={sprite}
           alt={name}
         />
-        <p className="">
-          <span className="font-bold">{name}</span> {hp}hp
+        <p className="text-sm ">
+          <span className="font-bold capitalize text-sm">{name}</span> {hp}hp
         </p>
         <p className="">Exp: {exp}</p>
       </div>
-      <div className=" text-sm flex flex-row justify-around w-full">
+      <div className=" text-sm flex flex-row justify-around w-full content-center">
         <div className="flex flex-col">
-          <h3 className="font-bold">{attack}K</h3>
-          <p> Ataque</p>
+          <h3 className="font-bold text-xs">{attack}K</h3>
+          <p className="text-xs"> Ataque</p>
         </div>
-        <div>
-          <h3 className="font-bold">{specialAttack}K</h3>
-          <p> Ataque especial</p>
+        <div className="flex flex-col">
+          <h3 className="font-bold text-xs">{specialAttack}K</h3>
+          <p className="text-xs"> Ataque especial</p>
         </div>
-        <div>
-          <h3 className="font-bold">{defense}K</h3>
-          <p> Defensa</p>
+        <div className="flex flex-col">
+          <h3 className="font-bold text-xs">{defense}K</h3>
+          <p className="text-xs"> Defensa</p>
         </div>
       </div>
     </div>
