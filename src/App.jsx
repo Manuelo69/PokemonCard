@@ -6,18 +6,21 @@ function App() {
   const [pokemon, setPokemon] = useState(null);
 
   useEffect(() => {
-    const getRandomPokemon = async () => {
-      const numRandom = Math.floor(Math.random() * 150) + 1; // Asegúrate de que el número aleatorio esté dentro del rango válido
-      const response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${numRandom}`
-      );
-      const data = await response.json();
-      console.log(data);
-      setPokemon(data);
-    };
-
     getRandomPokemon();
-  }, []); // El array vacío asegura que este efecto solo se ejecute una vez, al montarse el componente
+  }, []);
+
+  const getRandomPokemon = async () => {
+    const numRandom = Math.floor(Math.random() * 150) + 1;
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${numRandom}`
+    );
+    const data = await response.json();
+    setPokemon(data);
+  };
+
+  const handleRandomPokemon = () => {
+    getRandomPokemon();
+  };
 
   return (
     <div className="App">
@@ -32,6 +35,7 @@ function App() {
           defense={pokemon.stats[2].base_stat}
         />
       )}
+      <button onClick={handleRandomPokemon}>Recargar</button>
     </div>
   );
 }
