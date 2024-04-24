@@ -35,7 +35,12 @@ function App() {
           defense={pokemon.stats[2].base_stat}
         />
       )}
-      <button onClick={handleRandomPokemon}>Recargar</button>
+      <button
+        onClick={handleRandomPokemon}
+        className="mt-5 shadow-xl border border-black overflow-hidden"
+      >
+        Recargar
+      </button>
     </div>
   );
 }
