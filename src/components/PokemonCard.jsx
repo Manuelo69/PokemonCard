@@ -11,25 +11,33 @@ const PokemonCard = ({
   return (
     <div className="pokemon-card flex items-center flex-col bg-white shadow-xl rounded-2xl h-80 w-72 justify-around relative overflow-hidden">
       <img
-        className="block w-full h-full"
+        className="block w-full h-28 -mt-4"
         src={"src/assets/bg-pattern-card.svg"}
-        alt=""
       />
       <div className="card-body flex flex-col">
         <img
-          className="w-52 h-52 mb-11 rounded-full  bg-slate-50"
+          className="w-40 h-40 rounded-full -mt-24  bg-white border-black border"
           src={sprite}
           alt={name}
         />
-        <p className="relative z-10">
-          {name} {hp}hp
+        <p className="">
+          <span className="font-bold">{name}</span> {hp}hp
         </p>
-        <p className="relative z-10">Exp: {exp}</p>
+        <p className="">Exp: {exp}</p>
       </div>
-      <div className="w-40 text-sm flex flex-row relative z-10">
-        <p>{attack} Ataque</p>
-        <p>{specialAttack} Ataque especial</p>
-        <p>{defense} Defensa</p>
+      <div className=" text-sm flex flex-row justify-around w-full">
+        <div className="flex flex-col">
+          <h3 className="font-bold">{attack}K</h3>
+          <p> Ataque</p>
+        </div>
+        <div>
+          <h3 className="font-bold">{specialAttack}K</h3>
+          <p> Ataque especial</p>
+        </div>
+        <div>
+          <h3 className="font-bold">{defense}K</h3>
+          <p> Defensa</p>
+        </div>
       </div>
     </div>
   );
